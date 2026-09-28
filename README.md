@@ -321,8 +321,7 @@ Repeat Monitoring.
 
 ## Project Structure
 
-Secure-GSM-Based-Thermal-Monitoring/
-├── projectmain.c
+├── main.c
 ├── lcd.c
 ├── lcd.h
 ├── delay.c
@@ -384,7 +383,7 @@ Delete Processed Messages.
 
 Hardware Connections and Output
 
-## Project Output
+## Hardware Output
 
 ![LCD Output](Images/Output_LCD.jpg)
 
