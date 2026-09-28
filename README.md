@@ -17,8 +17,9 @@ Continuous monitoring and automatic fault notification.
 
  ## 📊 Project Block Diagram
  
-![Project Block Diagram](Screenshot%202026-09-12%20070011.png)
-Hardware Components Used
+![Project Block Diagram](Screenshot%202026-09-28%20083319.png)
+
+## Hardware Components Used
 
 LPC2148 ARM7 Microcontroller
 
@@ -32,8 +33,6 @@ AT24C256 EEPROM (I2C)
 
 4x4 Matrix Keypad
 
-RTC (On-Chip Real-Time Clock)
-
 LED Indicators
 
 Buzzer
@@ -42,7 +41,7 @@ Power Supply (3.3V / 5V)
 
 USB-UART Converter / DB9 Cable
 
-Software Used
+## Software Used
 
 Keil µVision IDE
 
@@ -50,8 +49,9 @@ Flash Magic
 
 Embedded C Programming
 
-Working of the Project
-Step 1: System Initialization
+## Working of the Project
+
+## Step 1: System Initialization
 
 When power is supplied to the LPC2148 microcontroller, it initializes all the required peripherals and hardware modules.
 
@@ -69,7 +69,7 @@ DHT11 sensor is initialized for temperature and humidity measurement.
 
 After successful initialization, the LCD displays that the system is ready for monitoring.
 
-Step 2: Temperature and Humidity Measurement Using DHT11
+## Step 2: Temperature and Humidity Measurement Using DHT11
 
 The DHT11 sensor continuously senses the surrounding temperature and humidity.
 
@@ -79,7 +79,7 @@ LPC2148 reads humidity data from DHT11.
 
 The values are updated continuously on the LCD display.
 
-Step 3: Real-Time Clock (RTC) Operation
+## Step 3: Real-Time Clock (RTC) Operation
 
 The RTC maintains the current date and time.
 
@@ -89,7 +89,7 @@ Every alert message includes date and time information.
 
 Timestamp helps in monitoring historical fault events.
 
-Step 4: LCD Display
+## Step 4: LCD Display
 
 The 16×2 LCD displays real-time system information.
 
@@ -109,7 +109,7 @@ Password/Menu Options.
 
 This allows users to monitor the system without a computer.
 
-Step 5: Temperature Set Point and EEPROM Storage
+## Step 5: Temperature Set Point and EEPROM Storage
 
 A temperature set point is permanently stored in AT24C256 EEPROM.
 
@@ -129,7 +129,7 @@ Authorized Mobile Number.
 
 Security Password.
 
-Step 6: Threshold Comparison and Alarm Generation
+## Step 6: Threshold Comparison and Alarm Generation
 
 LPC2148 continuously compares the measured temperature with the stored set point.
 
@@ -153,7 +153,7 @@ Buzzer remains OFF.
 
 Monitoring continues continuously.
 
-Step 7: GSM Communication
+## Step 7: GSM Communication
 
 The GSM module communicates with LPC2148 using UART AT commands.
 
@@ -175,42 +175,24 @@ Delete processed SMS.
 
 Send current sensor information on request.
 
-Step 8: Secure SMS-Based Remote Control
+## Step 8: Secure SMS-Based Remote Control
 
 Authorized users can control the system remotely using SMS.
 
 SMS Command Format
 
-SMS Command
-
-	
+SMS Command	
 
 Function
 
-
-
-
-0786T38$
-
-	
+0786T38$	
 
 Update temperature set point to 38°C
 
-
-
-
 0786M9876543210$
-
-	
-
 Update authorized mobile number
 
-
-
-
 0786I$
-
-	
 
 Request current sensor information
 
@@ -224,7 +206,7 @@ Invalid syntax messages are ignored.
 
 Unauthorized mobile numbers cannot modify settings.
 
-Step 9: Local Password-Protected Configuration
+## Step 9: Local Password-Protected Configuration
 
 Users can also configure the system locally using the keypad.
 
@@ -250,7 +232,7 @@ Red LED/Buzzer turns ON.
 
 Three consecutive wrong attempts temporarily block the system.
 
-Step 10: SMS Alert Generation
+## Step 10: SMS Alert Generation
 
 Whenever temperature exceeds the configured limit:
 
@@ -299,7 +281,7 @@ Update EEPROM if authorized changes are received.
 
 Repeat the monitoring process continuously.
 
-Project Flow
+## Project Flow
 
 Initialize LCD.
 
@@ -337,7 +319,8 @@ Update EEPROM if authorized.
 
 Repeat Monitoring.
 
-Project Structure
+## Project Structure
+
 Secure-GSM-Based-Thermal-Monitoring/
 ├── projectmain.c
 ├── lcd.c
@@ -358,12 +341,8 @@ Secure-GSM-Based-Thermal-Monitoring/
 ├── gsm.h
 ├── rtc.c
 ├── rtc.h
-├── README.md
-└── Images/
-    ├── Block_Diagram.png
-    ├── Circuit_Connections.png
-    └── Output_LCD.jpg
-Project Output
+
+## Project Output
 
 The system provides the following outputs:
 
@@ -405,16 +384,11 @@ Delete Processed Messages.
 
 Hardware Connections and Output
 
-Upload your hardware connection image in GitHub and replace the filename.
-
-## Hardware Connections
-
-![Hardware Connections](Images/Circuit_Connections.png)
-
 ## Project Output
 
 ![LCD Output](Images/Output_LCD.jpg)
-Applications
+
+## Applications
 
 Industrial Temperature Monitoring.
 
@@ -434,7 +408,7 @@ Medical Equipment Monitoring.
 
 Smart Monitoring Systems.
 
-Advantages
+## Advantages
 
 Real-time temperature and humidity monitoring.
 
@@ -452,7 +426,7 @@ Low-cost embedded monitoring solution.
 
 Suitable for industrial and remote applications.
 
-Disadvantages
+## Disadvantages
 
 GSM network is required for SMS communication.
 
@@ -464,7 +438,7 @@ Supports only limited environmental parameters.
 
 Requires authorized mobile number configuration.
 
-Future Improvements
+## Future Improvements
 
 Cloud integration using ESP8266/ESP32.
 
@@ -484,7 +458,7 @@ Web dashboard with historical graphs.
 
 Relay control for automatic cooling/heating devices.
 
-Author
+## Author
 
 **G.Prathyusha** 
 
